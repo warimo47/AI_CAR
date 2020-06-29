@@ -23,10 +23,13 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Folder
+.vs
+boost_1_69_0
+x64

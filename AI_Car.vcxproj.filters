@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Nerv">
+      <UniqueIdentifier>{69f8c8cd-8949-4af6-81bc-c2266939e976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nerv\Data">
+      <UniqueIdentifier>{2f932ea7-e0e0-464b-b15d-214c0d98d293}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nerv\Method">
+      <UniqueIdentifier>{7bf4b5a7-5d65-4c32-944f-dac2f49db382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="python_wrapper">
+      <UniqueIdentifier>{b2671507-99a1-4608-93dd-6e5724966cb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nerv\Data\Coretec">
+      <UniqueIdentifier>{3318881c-0d99-4508-8734-d6e8dbb30f42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nerv\Data\Dongguk">
+      <UniqueIdentifier>{837f9dec-ef61-4135-a8fd-41fa071e476e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Proxy">
+      <UniqueIdentifier>{ff52ec8f-d24d-4621-b61e-7495aac55c87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nerv\Method\CoretecScenario">
+      <UniqueIdentifier>{5a4662fc-2167-4773-9e71-076e2b6b3ca4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="python_wrapper\nerv_util_wrapper.cpp">
+      <Filter>python_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="python_wrapper\nerv_const.cpp">
+      <Filter>python_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="AI_Car.cpp" />
+    <ClCompile Include="Proxy\proxy_coretec_scenario.cpp">
+      <Filter>Proxy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="python_wrapper\nerv_util_wrapper.h">
+      <Filter>python_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="python_wrapper\nerv_const.h">
+      <Filter>python_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="AI_Car.h" />
+    <ClInclude Include="Nerv\Data\Coretec\Coretec.h">
+      <Filter>Nerv\Data\Coretec</Filter>
+    </ClInclude>
+    <ClInclude Include="Nerv\Data\Dongguk\Dongguk.h">
+      <Filter>Nerv\Data\Dongguk</Filter>
+    </ClInclude>
+    <ClInclude Include="Proxy\proxy_coretec_scenario.h">
+      <Filter>Proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="python_wrapper\export_data_Coretec_Scenario.h">
+      <Filter>python_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="python_wrapper\export_proxy_Coretec_Scenario.h">
+      <Filter>python_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Nerv\Method\CoretecScenario\CoretecScenario.h">
+      <Filter>Nerv\Method\CoretecScenario</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,403 @@
+/****************************************************************************************************************************************************
+
+    Document Header
+
+    domain   : Dongguk
+    creator  : root
+    create date          : 2018-11-27 11:52:52
+    description          : 
+ by root, at Tue Nov 27 11:57:12 2018
+
+****************************************************************************************************************************************************/
+
+
+/* Prevent Duplicated Including ********************************************************************************************************************/
+#ifndef Define__Nerv__Data__Dongguk__Dongguk_h
+#define Define__Nerv__Data__Dongguk__Dongguk_h
+
+
+/* Include Nerv Sdk Document ***********************************************************************************************************************/
+#include <Nerv/Nerv.h>
+
+
+/* Include Inline ***********************************************************************************************************************/
+#ifndef Define__Nerv__Data
+#define Define__Nerv__Data
+
+namespace  Nerv { namespace  Data { 
+  template<class TYPE>
+  inline ::Nerv::pksize_t nerv_sizeof(TYPE const* const& p) { return sizeof(*p); } 
+} using namespace Data; } using namespace Nerv;
+#endif // Define__Nerv__Data
+
+/* Include Method_Parent Domains Document *****************************************************************************************************************/
+
+/* Include Data Parent Domains Document *****************************************************************************************************************/
+#include <Nerv/Data/Coretec/0.h>
+
+
+/* Domain Define ***********************************************************************************************************************************/
+namespace  Nerv { namespace  Data { namespace  Dongguk { 
+
+/* Data Defines ********************************************************************************************************************************/
+    #pragma pack(1)
+    #pragma warning(disable: 4200)
+
+        /********************************************************************************************************************************************
+         data name  : AICarID
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) AICarID
+        {
+               /*  */
+               ::Nerv::ieee754_64_t Yaw;
+
+               /*  */
+               ::Nerv::ieee754_64_t Roll;
+
+               /*  */
+               ::Nerv::ieee754_64_t posX;
+
+               /*  */
+               ::Nerv::ieee754_64_t posY;
+
+               /*  */
+               ::Nerv::ieee754_64_t posZ;
+
+               /*  */
+               ::Nerv::ieee754_64_t Pitch;
+
+               /*  */
+               ::Nerv::ieee754_64_t dDown;
+
+               /*  */
+               ::Nerv::ieee754_64_t dEast;
+
+               /*  */
+               ::Nerv::ieee754_64_t dNorth;
+
+               /*  */
+               ::Nerv::ieee754_64_t dVelocity;
+
+               /*  */
+               ::Nerv::ieee754_64_t CarBreakValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t CarAccellValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t CarHandleValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t CarClutchesValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t CarTransmissionValue;
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( AICarID const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<AICarID> AICarID_history_elem;
+        typedef template_history<AICarID> AICarID_history;
+
+        /********************************************************************************************************************************************
+         data name  : AllAgentsInformation
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) AllAgentsInformation
+        {
+               /*  */
+               Nerv::Data::Dongguk::NpcHumanInfo HumanStatus[200];
+
+               /*  */
+               Nerv::Data::Dongguk::NpcCarInfo VehicleStatus[200];
+
+               /*  */
+               Nerv::Data::Dongguk::AICarID AutomaticCarStatus;
+
+               /*  */
+               Nerv::Data::Coretec::TimeStamp TimeStatus;
+
+               /*  */
+               Nerv::Data::Dongguk::NpcAnimalInfo AnimalStatus[200];
+
+               /*  */
+               Nerv::Data::Dongguk::TrafficLightInfo TrafficLightStatus[350];
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( AllAgentsInformation const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<AllAgentsInformation> AllAgentsInformation_history_elem;
+        typedef template_history<AllAgentsInformation> AllAgentsInformation_history;
+
+        /********************************************************************************************************************************************
+         data name  : CausedObjectInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) CausedObjectInfo
+        {
+               /*  */
+               ::Nerv::ieee754_64_t Impulse;
+
+               /*  */
+               ::Nerv::ieee754_64_t Location[3];
+
+               /*  */
+               ::Nerv::char_t CauseObjectID[4];
+
+               /*  */
+               ::Nerv::char_t CausedObjectID[4];
+
+               /*  */
+               ::Nerv::int32_t CausedObjectDamagedPartList[10];
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( CausedObjectInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<CausedObjectInfo> CausedObjectInfo_history_elem;
+        typedef template_history<CausedObjectInfo> CausedObjectInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : GameEngineInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) GameEngineInfo
+        {
+               /*  */
+               ::Nerv::int32_t FPS;
+
+               /*  */
+               ::Nerv::int32_t MAX_CAR_NUM;
+
+               /*  */
+               ::Nerv::int32_t MAX_HUMAN_NUM;
+
+               /*  */
+               ::Nerv::int32_t MAX_ANIMAL_NUM;
+
+               /*  */
+               ::Nerv::int32_t MAX_OTHEROBJECT_NUM;
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( GameEngineInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<GameEngineInfo> GameEngineInfo_history_elem;
+        typedef template_history<GameEngineInfo> GameEngineInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : NpcAnimalInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) NpcAnimalInfo
+        {
+               /*  */
+               ::Nerv::char_t NpcAnimalID[4];
+
+               /*  */
+               ::Nerv::u_int32_t NpcAnimalType;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcAnimalLocation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcAnimalRotation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcAnimalColliderSize[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t Speed;
+
+               /*  */
+               Nerv::Data::Coretec::AnimationInfo AnimationInfo[4];
+
+               /*  */
+               ::Nerv::u_int32_t AnimationInfoSize;
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( NpcAnimalInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<NpcAnimalInfo> NpcAnimalInfo_history_elem;
+        typedef template_history<NpcAnimalInfo> NpcAnimalInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : NpcCarInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) NpcCarInfo
+        {
+               /*  */
+               ::Nerv::ieee754_64_t Speed;
+
+               /*  */
+               ::Nerv::char_t NpcCarID[4];
+
+               /*  */
+               ::Nerv::int32_t NpcCarType;
+
+               /*  */
+               Nerv::Data::Coretec::AnimationInfo AnimationInfo[4];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarLocation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarRotation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarGearValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarAccelValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarBreakValue;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarSteerValue;
+
+               /*  */
+               ::Nerv::int32_t AnimationInfoSize;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcCarColliderSize[3];
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( NpcCarInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<NpcCarInfo> NpcCarInfo_history_elem;
+        typedef template_history<NpcCarInfo> NpcCarInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : NpcHumanInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) NpcHumanInfo
+        {
+               /*  */
+               ::Nerv::char_t NpcHumanID[4];
+
+               /*  */
+               ::Nerv::u_int32_t AnimationID;
+
+               /*  */
+               ::Nerv::u_int32_t AnimationAge;
+
+               /*  */
+               ::Nerv::int32_t NpcHumanType;
+
+               /*  */
+               Nerv::Data::Coretec::AnimationInfo AnimationInfo[4];
+
+               /*  */
+               ::Nerv::u_int32_t AnimationGender;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcHumanLocation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcHumanRotation[3];
+
+               /*  */
+               ::Nerv::int32_t AnimationInfoSize;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcHumanColliderSize[3];
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( NpcHumanInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<NpcHumanInfo> NpcHumanInfo_history_elem;
+        typedef template_history<NpcHumanInfo> NpcHumanInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : NpcOtherObjectInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) NpcOtherObjectInfo
+        {
+               /*  */
+               Nerv::Data::Coretec::AnimationInfo AnimationInfo[4];
+
+               /*  */
+               ::Nerv::char_t NpcOtherObjectID[4];
+
+               /*  */
+               ::Nerv::u_int32_t AnimationInfoSize;
+
+               /*  */
+               ::Nerv::u_int32_t NpcOtherObjectType;
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcOtherObjectLocation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcOtherObjectRotation[3];
+
+               /*  */
+               ::Nerv::ieee754_64_t NpcOtherObjectColliderSize[3];
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( NpcOtherObjectInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<NpcOtherObjectInfo> NpcOtherObjectInfo_history_elem;
+        typedef template_history<NpcOtherObjectInfo> NpcOtherObjectInfo_history;
+
+        /********************************************************************************************************************************************
+         data name  : Tick
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        typedef ::Nerv::ieee754_32_t Tick;
+        typedef template_history_elem<Tick> Tick_history_elem;
+        typedef template_history<Tick> Tick_history;
+
+        /********************************************************************************************************************************************
+         data name  : TrafficLightInfo
+         writer     : root
+         description: 
+        ********************************************************************************************************************************************/
+        struct __attribute__((packed)) TrafficLightInfo
+        {
+               /*  */
+               ::Nerv::char_t TrafficLightID[5];
+
+               /*  */
+               ::Nerv::ieee754_64_t TrafficLocation[3];
+
+               /*  */
+               ::Nerv::u_int32_t TrafficLightType;
+
+               /*  */
+               ::Nerv::int32_t TrafficLightState;
+
+               /*  */
+               ::Nerv::ieee754_64_t TrafficLightStateTimer;
+
+               ::Nerv::pksize_t get_sizeof() const { return sizeof(*this); }
+        };
+        inline ::Nerv::pksize_t nerv_sizeof( TrafficLightInfo const* const& p) { return p->get_sizeof(); }
+        typedef template_history_elem<TrafficLightInfo> TrafficLightInfo_history_elem;
+        typedef template_history<TrafficLightInfo> TrafficLightInfo_history;
+
+        #pragma warning(default : 4200)
+        #pragma pack()
+
+
+    /* Method Defines ******************************************************************************************************************************/
+
+
+    /* Interface Defines ***************************************************************************************************************************/
+
+
+} using namespace Dongguk; } using namespace Data; } using namespace Nerv; 
+
+#endif // #ifdef Define__Nerv__Data__Dongguk__Dongguk_h
