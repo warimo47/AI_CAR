@@ -186,7 +186,8 @@ namespace Nerv { namespace Data { namespace Dongguk {
 			lhs.IsNew == rhs.IsNew &&
 			std::equal(std::begin(lhs.HumanTypes), std::end(lhs.HumanTypes), std::begin(rhs.HumanTypes)) &&
 			std::equal(std::begin(lhs.AnimalTypes), std::end(lhs.AnimalTypes), std::begin(rhs.AnimalTypes)) &&
-			std::equal(std::begin(lhs.CarTypes), std::end(lhs.CarTypes), std::begin(rhs.CarTypes));
+			std::equal(std::begin(lhs.CarTypes), std::end(lhs.CarTypes), std::begin(rhs.CarTypes)) &&
+			std::equal(std::begin(lhs.AccidentTypes), std::end(lhs.AccidentTypes), std::begin(rhs.AccidentTypes));
 	}
 
 	/*
@@ -379,6 +380,7 @@ void export_data_Dongguk()
 		.add_property("HumanTypes", make_array(&SC00_ScenarioSetting::HumanTypes))
 		.add_property("AnimalTypes", make_array(&SC00_ScenarioSetting::AnimalTypes))
 		.add_property("CarTypes", make_array(&SC00_ScenarioSetting::CarTypes))
+		.add_property("AccidentTypes", make_array(&SC00_ScenarioSetting::AccidentTypes))
 	;       
 
     py::class_<SC03_CrashInfo>("CrashInfo")
